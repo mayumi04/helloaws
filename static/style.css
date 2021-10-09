@@ -1,0 +1,17 @@
+p {
+    margin: 30px;
+}
+
+table.table {
+    margin: 20px;
+    counter-reset: ranking;
+ }
+
+ table.table tbody th:before {
+    counter-increment: ranking;
+    content: counter(ranking) ;
+ }
+
+.example li {
+    display:inline;
+    }

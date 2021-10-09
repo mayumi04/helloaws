@@ -1,0 +1,22 @@
+{% extends 'fruits/base.html' %}
+
+{% block title %}
+詳細
+{% endblock %}
+
+{% block headertitle %}
+詳細
+{% endblock %}
+
+{% block content %}
+    <div>
+        <table class="table table-sm">
+            <tr><td>No</td><td>{{ object.no }}</td></tr>
+            <tr><td>果物名</td><td>{{ object.name }}</td></tr>
+            <tr><td>メモ</td><td>{{ object.memo }}</td></tr>
+        </table>
+        <br/>
+    </div>
+    <br/>
+    <a href="{% url 'fruits:index' %}" class="btn btn-info">戻る</a>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'fruits/base.html' %}
+
+{% block title %}
+一覧
+{% endblock %}
+
+{% block content %}
+<h1>一覧</h1>
+  <table class="table table-striped table-bordered　table-sm">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>果物名</th>
+        <th>メモ</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for fruits in object_list %}
+      <tr>
+        <td>{{ fruits.no }}</td>
+        <td>{{ fruits.name }}</td>
+        <td>{{ fruits.memo }}</td>
+        <td>
+          <a href="{% url 'fruits:detail' fruits.pk %}" class="btn btn-info btn-sm">詳細</a>
+          <a href="{% url 'fruits:update' fruits.pk %}" class="btn btn-info btn-sm">更新</a>
+          <a href="{% url 'fruits:delete' fruits.pk %}" class="btn btn-info btn-sm">削除</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'fruits:create' %}" class="btn btn-primary btn-sm">追加</a>
+{% endblock %}
